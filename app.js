@@ -13,7 +13,14 @@ const errorMessage = document.querySelector("#errorMessage")
 const errorField = document.querySelector(".error");
 
 let notes = [2000, 500, 100, 50, 20, 10, 5, 1];
-let returnNotes = [];
+
+function init(){
+    let arr = [];
+    for(let i = 0; i < notes.length; i++){
+        arr[i] = 0;
+    }
+    return arr;
+}
 
 function validateInput(){
 
@@ -68,7 +75,7 @@ function calculateChange(){
 
     if(return_amount > 0){
 
-        let return_notes_count = [];
+        let return_notes_count = init();
 
         for(let i = 0; i < notes.length; i++){
 
