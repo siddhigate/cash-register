@@ -24,6 +24,9 @@ function validateInput(){
         else if(bill_value < 0 || !Number.isInteger(Number(bill_value))){
             setError("Please enter valid bill amount")
         }
+        else if(bill_value === "0"){
+            setError("Bill amount cannot be 0");
+        }
         else {
             return true;
         }
@@ -37,6 +40,9 @@ function validateInput(){
         } 
         else if(bill_value < 0 || cash_given_value < 0 || !Number.isInteger(Number(cash_given_value)) || !Number.isInteger(Number(bill_value))){
             setError("Enter valid values")
+        }
+        else if(bill_value === "0"){
+            setError("Bill amount cannot be 0");
         }
         else if(bill_value > cash_given_value){
             setError("Cash given is less than bill");
