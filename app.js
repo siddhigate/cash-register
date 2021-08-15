@@ -10,6 +10,7 @@ const modal = document.querySelector(".modal");
 const noOfNotes = document.querySelectorAll(".noOfNotes");
 
 const errorMessage = document.querySelector("#errorMessage")
+const errorField = document.querySelector(".error");
 
 let notes = [2000, 500, 100, 50, 20, 10, 5, 1];
 let returnNotes = [];
@@ -107,11 +108,13 @@ function resetInput(){
 
 function setError(error){
     errorMessage.innerText = error;
+    errorField.style.display = "flex";
 }
 
 function resetError(){
     errorMessage.style = "color:red";
     errorMessage.innerText ="";
+    errorField.style.display = "none";
 }
 
 
