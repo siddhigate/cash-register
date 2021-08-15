@@ -89,12 +89,14 @@ function displayOutput(return_notes){
       exit.addEventListener('click', function(event) {
         event.preventDefault();
         modal.classList.remove('open');
+        resetInput();
       });
       });
 }
   
 function resetInput(){
-
+    bill_amount.value = "";
+    cash_given.value ="";
 }
 
 function setError(error){
