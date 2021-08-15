@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Register</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!--===== NAVIGATION =====-->
@@ -15,28 +16,84 @@
         <div class="nav-brand">cashregister</div>
     </nav>
 
+    <!-- ==== MAIN ====== -->
     <main>
-        <div class="row">
-            <div class="column column1"> <img src="./wallet3.svg" alt=""></div>
-            <div class="column column2"><h1>Find out how much change to return?</h1></div>
-        </div>
+        <div class="container-center container">
 
-        <div class="modal">
+            <div class="row1">
+                <div class="column column1"> <img src="./wallet.svg" alt=""></div>
+                <div class="column column2"><h1>Find out how much change to return?</h1></div>
+            </div>
 
-        </div>
+            
+            <div class="modal" id="modal-one">
+                <div class="modal-bg modal-exit"></div>
+                <div class="modal-container">
+                  <!-- <h1>Amazing Modal</h1> -->
+                  <h1 style="margin:1.8rem">Change to return</h1>
 
-        <div>
-            <input id="bill_amt" type="text" placeholder="Enter Bill Amount">
-        </div>
-        
-        <div>        
-            <input id="cash_given" type="text" placeholder="Enter Cash given by customer">
-        </div>
-        
-        <button id="submit_btn">Next</button>
+                  <table class="styled-table bordered">
+                    <thead>
+                      <tr>
+                        <th style="padding-right:3rem">Note</th>
+                        <th>No. of Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="active-row">
+                        <td>2000</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>500</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>100</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>100</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>20</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td class="noOfNotes">0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="modal-close modal-exit">X</button>
+                </div>
+              </div>
 
+            <div class="row container-center">
+                <input id="bill_amt" type="text" placeholder="Enter Bill Amount">
+                <!-- <div>Tick</div> -->
+            </div>
+            <div class="row container-center row2" id="cash_given_input">
+                <input id="cash_given" type="text" placeholder="Enter Cash given by customer">
+                <div></div>
+            </div>
+            <div class="row container-center">
+                <button id="submit_btn">Next</button>
+            </div>
+        </div>
     </main>
+
 
     <script src="./app.js"></script>
 </body>
+
 </html>
