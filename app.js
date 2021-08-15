@@ -124,3 +124,10 @@ btn_submit.addEventListener("click", () => {
     }
 
 })
+
+cash_given.addEventListener("click", () => {
+    resetError()
+});
+bill_amount.addEventListener("click", () => {
+    resetError()
+});
