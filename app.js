@@ -26,13 +26,13 @@ function validateInput(){
 
     if(btn_submit.innerText == "Next"){
         let bill_value = Number(bill_amount.value);
-        if(!bill_value){
+        if(bill_amount.value === ""){
             setError("Please enter bill amount")
         } 
         else if(bill_value < 0 || !Number.isInteger(Number(bill_value))){
             setError("Please enter valid bill amount")
         }
-        else if(bill_value === "0"){
+        else if(bill_value === 0){
             setError("Bill amount cannot be 0");
         }
         else {
@@ -46,11 +46,14 @@ function validateInput(){
         if(bill_amount.value === "" || cash_given.value === ""){
             setError("Please enter values")
         } 
-        else if(bill_value <= 0 || cash_given_value <= 0 || !Number.isInteger(Number(cash_given_value)) || !Number.isInteger(Number(bill_value))){
-            setError("Enter valid values. Values should be greater than 0 and should an integer.")
+        else if(bill_value < 0 || cash_given_value < 0 || !Number.isInteger(Number(cash_given_value)) || !Number.isInteger(Number(bill_value))){
+            setError("Enter valid values. Values should be an integer.")
         }
-        else if(bill_value === "0"){
+        else if(bill_value === 0){
             setError("Bill amount cannot be 0");
+        }
+        else if(cash_given_value === 0){
+            setError("Cash given amount cannot be 0");
         }
         else if(bill_value > cash_given_value){
             setError("Cash given is less than bill");
@@ -102,15 +105,10 @@ function displayOutput(return_notes){
       exit.addEventListener('click', function(event) {
         event.preventDefault();
         modal.classList.remove('open');
-        resetInput();
       });
       });
 }
-  
-function resetInput(){
-    bill_amount.value = "";
-    cash_given.value ="";
-}
+
 
 function setError(error){
     errorMessage.innerText = error;
