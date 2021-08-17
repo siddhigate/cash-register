@@ -25,7 +25,7 @@ function init(){
 function validateInput(){
 
     if(btn_submit.innerText == "Next"){
-        let bill_value = bill_amount.value;
+        let bill_value = Number(bill_amount.value);
         if(bill_value === ""){
             setError("Please enter bill amount")
         } 
@@ -40,8 +40,8 @@ function validateInput(){
         }
     }
     else{
-        let bill_value = bill_amount.value;
-        let cash_given_value = cash_given.value;
+        let bill_value = Number(bill_amount.value);
+        let cash_given_value = Number(cash_given.value);
 
         if(bill_value === "" || cash_given_value === ""){
             setError("Please enter values")
@@ -60,7 +60,6 @@ function validateInput(){
             setError("No change to return");
         }
         else {
-            console.log("here")
             return true;
         }
     } 
@@ -68,10 +67,10 @@ function validateInput(){
 
 function calculateChange(){
     
-    let bill_value = bill_amount.value;
-    let cash_given_value = cash_given.value;
+    let bill_value = Number(bill_amount.value);
+    let cash_given_value = Number(cash_given.value);
 
-    let return_amount = parseInt(cash_given_value) - parseInt(bill_value);
+    let return_amount = cash_given_value - bill_value;
 
     if(return_amount > 0){
 
@@ -134,7 +133,6 @@ btn_submit.addEventListener("click", () => {
         }       
     }
     else if(validateInput() === true){
-        console.log("in else")
         let change =  calculateChange();
         displayOutput(change);
     }
