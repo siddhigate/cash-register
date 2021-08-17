@@ -26,7 +26,7 @@ function validateInput(){
 
     if(btn_submit.innerText == "Next"){
         let bill_value = Number(bill_amount.value);
-        if(bill_value === ""){
+        if(!bill_value){
             setError("Please enter bill amount")
         } 
         else if(bill_value < 0 || !Number.isInteger(Number(bill_value))){
@@ -43,11 +43,11 @@ function validateInput(){
         let bill_value = Number(bill_amount.value);
         let cash_given_value = Number(cash_given.value);
 
-        if(bill_value === "" || cash_given_value === ""){
+        if(!bill_value || !cash_given_value){
             setError("Please enter values")
         } 
         else if(bill_value < 0 || cash_given_value < 0 || !Number.isInteger(Number(cash_given_value)) || !Number.isInteger(Number(bill_value))){
-            setError("Enter valid values")
+            setError("Enter valid values. Values should be greater than 0 and should ne an integer.")
         }
         else if(bill_value === "0"){
             setError("Bill amount cannot be 0");
