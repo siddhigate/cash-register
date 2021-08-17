@@ -12,7 +12,7 @@ const noOfNotes = document.querySelectorAll(".noOfNotes");
 const errorMessage = document.querySelector("#errorMessage")
 const errorField = document.querySelector(".error");
 
-let notes = [2000, 500, 100, 50, 20, 10, 5, 1];
+let notes = [2000, 500, 100, 20, 10, 5, 1];
 
 function init(){
     let arr = [];
@@ -47,7 +47,7 @@ function validateInput(){
             setError("Please enter values")
         } 
         else if(bill_value < 0 || cash_given_value < 0 || !Number.isInteger(Number(cash_given_value)) || !Number.isInteger(Number(bill_value))){
-            setError("Enter valid values. Values should be greater than 0 and should ne an integer.")
+            setError("Enter valid values. Values should be greater than 0 and should an integer.")
         }
         else if(bill_value === "0"){
             setError("Bill amount cannot be 0");
